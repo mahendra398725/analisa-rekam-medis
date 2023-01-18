@@ -15,4 +15,10 @@ class Dashboard extends CI_Controller
         check_not_login();
         $this->load->view('_partial/wrapper', $data);
     }
+
+    function comingsoon()
+    {
+        check_not_login();
+        $this->load->view('comingsoon');
+    }
 }

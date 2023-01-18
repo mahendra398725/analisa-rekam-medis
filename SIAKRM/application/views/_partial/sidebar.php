@@ -60,25 +60,25 @@
   			</a>
   			<ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
   				<li>
-  					<a href="charts-chartjs.html">
-  						<i class="bi bi-circle"></i><span>Chart.js</span>
+  					<a href="<?= base_url('dashboard/comingsoon') ?>">
+  						<i class="bi bi-circle"></i><span>Kelengkapan</span>
   					</a>
   				</li>
   				<li>
-  					<a href="charts-apexcharts.html">
-  						<i class="bi bi-circle"></i><span>ApexCharts</span>
+  					<a href="<?= base_url('dashboard/comingsoon') ?>">
+  						<i class="bi bi-circle"></i><span>Per Item</span>
   					</a>
   				</li>
   				<li>
-  					<a href="charts-echarts.html">
-  						<i class="bi bi-circle"></i><span>ECharts</span>
+  					<a href="<?= base_url('dashboard/comingsoon') ?>">
+  						<i class="bi bi-circle"></i><span>Per Poli</span>
   					</a>
   				</li>
   			</ul>
   		</li><!-- End Charts Nav -->
 
   		<li class="nav-item">
-  			<a class="nav-link collapsed" href="pages-blank.html">
+  			<a class="nav-link collapsed" href="<?= base_url('dashboard/comingsoon') ?>">
   				<i class="bi bi-file-earmark"></i>
   				<span>Laporan</span>
   			</a>
