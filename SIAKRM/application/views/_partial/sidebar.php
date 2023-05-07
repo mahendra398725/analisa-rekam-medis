@@ -54,28 +54,12 @@
       		</li><!-- End Blank Page Nav -->
         <?php } ?>
 
-  		<li class="nav-item">
-  			<a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-  				<i class="bi bi-bar-chart"></i><span>Grafik</span><i class="bi bi-chevron-down ms-auto"></i>
-  			</a>
-  			<ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-  				<li>
-  					<a href="<?= base_url('dashboard/comingsoon') ?>">
-  						<i class="bi bi-circle"></i><span>Kelengkapan</span>
-  					</a>
-  				</li>
-  				<li>
-  					<a href="<?= base_url('dashboard/comingsoon') ?>">
-  						<i class="bi bi-circle"></i><span>Per Item</span>
-  					</a>
-  				</li>
-  				<li>
-  					<a href="<?= base_url('dashboard/comingsoon') ?>">
-  						<i class="bi bi-circle"></i><span>Per Poli</span>
-  					</a>
-  				</li>
-  			</ul>
-  		</li><!-- End Charts Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="<?= base_url('grafik') ?>">
+          <i class="bi bi-bar-chart"></i>
+          <span>Grafik</span>
+        </a>
+      </li><!-- End Blank Page Nav -->
 
   		<li class="nav-item">
   			<a class="nav-link collapsed" href="<?= base_url('dashboard/comingsoon') ?>">

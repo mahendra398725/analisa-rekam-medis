@@ -75,8 +75,8 @@
 		                                <label class="col-sm-12 col-form-label" for="status_kelengkapan">Status Kelengakapan Berkas</label>
 		                                <select class="form-select" name="status_kelengkapan" id="status_kelengkapan" aria-label="Default select example">
 		                                    <option selected>Pilih Status Kelengkapan</option>
-		                                    <option value="lengkap">Lengkap</option>
-		                                    <option value="tidak lengkap">Tidak Lengkap</option>
+		                                    <option value="1">Lengkap</option>
+		                                    <option value="2">Tidak Lengkap</option>
 		                                </select>
 		                            </div>
 		                        </div>

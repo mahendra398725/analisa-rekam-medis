@@ -36,4 +36,35 @@ class M_AnalisisRM extends CI_Model
     {
         return $this->db->insert('tb_analisis', $data);
     }
+
+    function lengkap(){
+        $this->db->where("status_kelengkapan =","lengkap");
+        return $this->db->count_all_results("tb_analisis");
+    }
+
+    function tidak_lengkap(){
+        $this->db->where("status_kelengkapan =","tidak_lengkap");
+        return $this->db->count_all_results("tb_analisis");
+    }
+
+    function poli1(){
+        $this->db->where("poli_id =", "1");
+        return $this->db->count_all_results("tb_analisis");
+    }
+
+    function poli2(){
+        $this->db->where("poli_id =", "2");
+        return $this->db->count_all_results("tb_analisis");
+    }
+
+    function poli3(){
+        $this->db->where("poli_id =", "3");
+        return $this->db->count_all_results("tb_analisis");
+    }
+
+    function poli4(){
+        $this->db->where("poli_id =", "4");
+        return $this->db->count_all_results("tb_analisis");
+    }
+    
 }

@@ -54,4 +54,28 @@ class AnalisisRekamMedis extends CI_Controller
         return redirect(base_url('analisisrekammedis'));
     }
 
+    public function pie() {
+        $data = [
+            'tittle'        => 'SIAKRM - Data Rekam Medis Pasien',
+            'judul'         => 'DATA REKAM MEDIS',
+            'head'          => 'Rekam Medis',
+            'isi'           => 'rekam_medis/v_analisis_rm/list',
+            'rms'           => $this->M_RM->tampil_rm(),
+            'pl'            => $this->M_poli->tampil_poli(),
+            'dr'            => $this->M_dokter->tampil_dokter(),
+            'no_rm'         => $this->M_RM->ambil_kode(),
+        ];
+        check_not_login();
+        $this->load->view('_partial/wrapper_content', $data);
+
+        //$data = [
+        //    'tittle'        => 'SIAKRM - Data Rekam Medis Pasien',
+        //    'judul'         => 'DATA REKAM MEDIS',
+        //    'head'          => 'Rekam Medis',
+        //    'isi'           => 'rekam_medis/v_grafik/pie_chart'
+        //];
+        //check_not_login();
+        //$this->load->view('_partial/wrapper_content', $data);
+    } 
+
 }

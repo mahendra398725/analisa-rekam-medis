@@ -1,0 +1,81 @@
+// tampilkan grafik lingkaran echart_pie
+ <h2 align="center"  class="style1" style="background:#0099FF"><strong>Diagram Penyebab Alasan APS</strong></h2>
+<div id="echart_pie" style="height:400px;"></div>
+    // load JS charts
+    <!-- Chart.js -->
+    <script src="<?php echo base_url(); ?>JS/Chart.js/dist/Chart.min.js"></script>
+    <script src="<?php echo base_url(); ?>JS/echarts/dist/echarts.min.js"></script>
+  
+ // Desain Grafik
+  var echartPie = echarts.init(document.getElementById('echart_pie'), theme);
+      echartPie.setOption({
+        tooltip: {
+          trigger: 'item',
+          formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        legend: {
+          x: 'center',           y: 'bottom',
+// kategorinya samakan dengan isi database
+          data: ['Kemiskinan', 'Bekerja', 'DO Sekolah', 'Kasus Pidana', 'Pribadi']
+        },
+        toolbox: {
+          show: true,
+          feature: {
+            magicType: {
+              show: true,
+              type: ['pie', 'funnel'],
+              option: {
+                funnel: {
+                  x: '25%',
+                  width: '50%',
+                  funnelAlign: 'left',
+                  max: 1548
+                }
+              }
+            },
+            restore: {
+              show: true,
+              title: "Restore"
+            },
+            saveAsImage: {
+              show: true,
+              title: "Save Image"
+            }
+          }
+        },
+        calculable: true,
+        series: [{
+          type: 'pie',
+          radius: '55%',
+          center: ['50%', '48%'],
+          data:
+          [{
+// isinya samakan dengan nama variabel di controller
+            value: <?php echo $kemiskinan; ?>,
+            name: 'Kemiskinan'
+          }, {
+            value: <?php echo $bekerja; ?>,
+            name: 'Bekerja'
+          }, {
+            value: <?php echo $keluar; ?>,
+            name: 'DO Sekolah'
+          }, {
+            value:  <?php echo $kasuspidana; ?>,
+            name: 'Kasus Pidana'
+          }, {
+            value:<?php echo $pribadi; ?>,
+            name: 'Pribadi'
+          }]
+        }]
+      });
+
+      var dataStyle = {
+        normal: {
+          label: {
+            show: false
+          },
+          labelLine: {
+            show: false
+          }
+        }
+      };
