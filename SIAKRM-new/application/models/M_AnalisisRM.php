@@ -66,6 +66,11 @@ class M_AnalisisRM extends CI_Model
         $this->db->where("poli_id =", "4");
         return $this->db->count_all_results("tb_analisis");
     }
+
+    public function total($tot){
+        $query = $this->db->query("SELECT COUNT($tot) as Jumlah FROM tb_rekam_medis WHERE $tot<>'' ");
+        return $query->row();
+    }
     
     // function rekam1(){
     //     $this->db->select("nama")->count("*");

@@ -56,6 +56,7 @@
                                     <?php
                                     $no = 1;
                                     foreach ($arm as $key => $a) {
+                                        die(var_dump($arm));
                                     ?>
                                         <tr>
                                             <th scope="row">
