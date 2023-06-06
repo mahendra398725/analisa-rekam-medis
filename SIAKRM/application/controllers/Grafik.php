@@ -30,17 +30,31 @@ class Grafik extends CI_Controller
             'p1'         	=> $this->M_AnalisisRM->poli1(),
             'p2'         	=> $this->M_AnalisisRM->poli2(),
             'p3'         	=> $this->M_AnalisisRM->poli3(),
-            'p4'         	=> $this->M_AnalisisRM->poli4()
+            'p4'         	=> $this->M_AnalisisRM->poli4(),
+            'rm1'            => $this->M_AnalisisRM->total('nama'),
+            'rm2'            => $this->M_AnalisisRM->total('no_rm'),
+            'rm3'            => $this->M_AnalisisRM->total('no_bpjs'),
+            'rm4'            => $this->M_AnalisisRM->total('no_ktp'),
+            'rm5'            => $this->M_AnalisisRM->total('JK'),
+            'rm6'            => $this->M_AnalisisRM->total('tanggal_lahir'),
+            'rm7'            => $this->M_AnalisisRM->total('umur'),
+            'rm8'            => $this->M_AnalisisRM->total('alamat'),
+            'rm9'            => $this->M_AnalisisRM->total('pekerjaan'),
+            'rm10'            => $this->M_AnalisisRM->total('keluhan'),
+            'rm11'            => $this->M_AnalisisRM->total('terapi'),
+            'rm12'            => $this->M_AnalisisRM->total('tensi'),
+            'rm13'            => $this->M_AnalisisRM->total('nadi'),
+            'rm14'            => $this->M_AnalisisRM->total('suhu'),
+            'rm15'            => $this->M_AnalisisRM->total('pernapasan'),
+            'rm16'            => $this->M_AnalisisRM->total('tinggi'),
+            'rm17'            => $this->M_AnalisisRM->total('berat'),
+            'rm18'            => $this->M_AnalisisRM->total('lingkar_perut'),
+            'rm19'            => $this->M_AnalisisRM->total('diagnosa'),
+            'rm20'            => $this->M_AnalisisRM->total('tindakan'),
         ];
         check_not_login();
         $this->load->view('_partial/wrapper_content', $data);
     }
 
-    public function siswaPertahun()
-    {
-        $data["title"]      = "Grafik Siswa Lulus Per Tahun";
-        $this->load->model("Model_chart", "Mchart"); // load Model_chart
-        $data["chartSiswa"] = $this->Mchart->siswaPertahun(); // call method siswaPertahun di Model_chart
-        $this->load->view('view_chart', $data); // passing data ke view_chart
-    }
+    
 }

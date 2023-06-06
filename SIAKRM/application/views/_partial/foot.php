@@ -1,14 +1,14 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
       <div class="copyright">
-          &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>DeCode</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ --><!-- 
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
       </div>
   </footer><!-- End Footer -->
 
@@ -42,6 +42,28 @@
           });
       });
   </script>
+
+    <script>
+    $(document).ready(function(){ // Ketika halaman selesai di load
+        $('.input-tanggal').datepicker({
+            dateFormat: 'yy-mm-dd' // Set format tanggalnya jadi yyyy-mm-dd
+        });
+        $('#form-tanggal, #form-bulan, #form-tahun').hide(); // Sebagai default kita sembunyikan form filter tanggal, bulan & tahunnya
+        $('#filter').change(function(){ // Ketika user memilih filter
+            if($(this).val() == '1'){ // Jika filter nya 1 (per tanggal)
+                $('#form-bulan, #form-tahun').hide(); // Sembunyikan form bulan dan tahun
+                $('#form-tanggal').show(); // Tampilkan form tanggal
+            }else if($(this).val() == '2'){ // Jika filter nya 2 (per bulan)
+                $('#form-tanggal').hide(); // Sembunyikan form tanggal
+                $('#form-bulan, #form-tahun').show(); // Tampilkan form bulan dan tahun
+            }else{ // Jika filternya 3 (per tahun)
+                $('#form-tanggal, #form-bulan').hide(); // Sembunyikan form tanggal dan bulan
+                $('#form-tahun').show(); // Tampilkan form tahun
+            }
+            $('#form-tanggal input, #form-bulan select, #form-tahun select').val(''); // Clear data pada textbox tanggal, combobox bulan & tahun
+        })
+    })
+    </script>
   </body>
 
   </html>

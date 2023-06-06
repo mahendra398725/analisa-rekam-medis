@@ -62,7 +62,7 @@
       </li><!-- End Blank Page Nav -->
 
   		<li class="nav-item">
-  			<a class="nav-link collapsed" href="<?= base_url('dashboard/comingsoon') ?>">
+  			<a class="nav-link collapsed" href="<?= base_url('report') ?>">
   				<i class="bi bi-file-earmark"></i>
   				<span>Laporan</span>
   			</a>
