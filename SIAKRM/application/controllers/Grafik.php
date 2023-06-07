@@ -1,8 +1,4 @@
 <?php
-
-require_once APPPATH . 'third_party/Spout/Autoloader/autoload.php';
-require 'vendor/autoload.php';
-
 use Box\Spout\Reader\Common\Creator\ReaderEntityFactory;
 
 class Grafik extends CI_Controller
