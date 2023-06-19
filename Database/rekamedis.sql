@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Bulan Mei 2023 pada 18.18
+-- Waktu pembuatan: 06 Jun 2023 pada 17.41
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 7.4.33
 
@@ -33,18 +33,19 @@ CREATE TABLE `tb_analisis` (
   `poli_id` int(11) UNSIGNED NOT NULL,
   `dokter_id` int(11) UNSIGNED NOT NULL,
   `petugas` varchar(100) NOT NULL,
-  `status_kelengkapan` enum('lengkap','tidak_lengkap') NOT NULL
+  `status_kelengkapan` enum('lengkap','tidak_lengkap') NOT NULL,
+  `tanggal` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `tb_analisis`
 --
 
-INSERT INTO `tb_analisis` (`id_analisis`, `rm_id`, `poli_id`, `dokter_id`, `petugas`, `status_kelengkapan`) VALUES
-(9, 3004, 1, 1, 'USER', 'lengkap'),
-(10, 3000, 1, 1, 'USER', 'tidak_lengkap'),
-(11, 3001, 2, 1, 'USER', 'tidak_lengkap'),
-(12, 3003, 4, 1, 'USER', 'lengkap');
+INSERT INTO `tb_analisis` (`id_analisis`, `rm_id`, `poli_id`, `dokter_id`, `petugas`, `status_kelengkapan`, `tanggal`) VALUES
+(9, 3004, 1, 1, 'USER', 'lengkap', '2023-06-04'),
+(10, 3102, 1, 1, 'USER', 'tidak_lengkap', '2019-11-01'),
+(11, 3101, 2, 1, 'USER', 'tidak_lengkap', '2023-06-04'),
+(12, 3003, 4, 1, 'USER', 'lengkap', '2023-06-04');
 
 -- --------------------------------------------------------
 
@@ -130,25 +131,25 @@ CREATE TABLE `tb_rekam_medis` (
 --
 
 INSERT INTO `tb_rekam_medis` (`id_rm`, `nama`, `no_rm`, `no_bpjs`, `no_ktp`, `JK`, `tanggal_lahir`, `umur`, `alamat`, `pekerjaan`, `keluhan`, `terapi`, `tensi`, `nadi`, `suhu`, `pernapasan`, `tinggi`, `berat`, `lingkar_perut`, `id_diagnosa`, `diagnosa`, `tindakan`) VALUES
-(2999, 'WIJI', '`012172', '`0001036815006', '`', 'P', '1968-10-03', '53 ', '44696', 'Mengurus Rumah Tangga', 'tangan trasa panas', '-', '120/80', '80', '36', '18', '160', '60', '80', 'R53', 'Malaise and fatigue', 'Pelayanan Rawat Jalan'),
-(3000, 'SAMSIYAH', '`012174', '`0000664611129', '`', 'P', '1968-07-05', '53 ', '44788', 'Mengurus Rumah Tangga', 'cek gula darah', '-', '177/104', '80', '36', '18', '160', '70', '80', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
-(3001, 'ALYA DWI NANDA', '`012177', '`0001369606601', '`3603014901050001', 'P', '2005-01-09', '17 ', '44768', 'Pelajar / Mahasiswa', 'suket', '-', '0/0', '0', '0', '0', '0', '0', '0', 'Z00.0', 'General medical examination', 'Pelayanan Rawat Jalan'),
-(3002, 'MISKIYEM', '`011321', '`0003104574175', '`', 'P', '1971-02-01', '51 ', '44765', 'Mengurus Rumah Tangga', 'cek tensi', '-', '220/130', '80', '36', '18', '160', '80', '80', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
-(3003, 'DEVI YULIANINGSIH', '`012171', '`', '`3503016312930003', 'P', '1993-12-23', '28 ', 'DUSUN KRAJAN, RT : 3,RW :2', 'Mengurus Rumah Tangga', 'cek hb', '-', '126/70', '0', '0', '0', '0', '0', '0', 'K29', 'Gastritis and duodenitis', 'Pelayanan Rawat Jalan'),
-(3004, 'FINA ROIUL AULIA', '`012173', '`', '`', 'P', '2008-05-24', '13 ', '33/13', 'Pelajar / Mahasiswa', 'batuk berdahak', '-', '120/80', '0', '0', '0', '0', '0', '0', 'J06', 'Acute upper respiratory infections of multiple and unspecified sites', 'Pelayanan Rawat Jalan'),
-(3005, 'WULAN RAMADHANI', '`002239', '`', '`', 'P', '2011-08-04', '10 ', '44563', 'Belum / Tidak Bekerja', 'batuk,pilek,panas', '-', '110/70', '0', '0', '0', '0', '0', '0', 'J06', 'Acute upper respiratory infections of multiple and unspecified sites', 'Pelayanan Rawat Jalan'),
-(3006, 'SONEM', '`009657', '`', '`3503014712540001', 'P', '1954-12-07', '67 ', 'DUSUN PASUR, RT : 12,RW :3', 'Mengurus Rumah Tangga', 'keju linu', '-', '0/0', '0', '0', '0', '0', '0', '0', 'M06.0', 'Seronegative rheumatoid arthritis', 'Pelayanan Rawat Jalan'),
-(3007, 'PARDAN RIANTO', '`010632', '`0000663023215', '`', 'L', '1991-04-08', '30 ', '44564', 'Wiraswasta', 'kontrol odgj', '-', '110/70', '80', '36', '18', '155', '60', '80', 'F20', 'Schizophrenia', 'Pelayanan Rawat Jalan'),
-(3008, 'MULYONO', '`001226', '`0000106633539', '`', 'L', '1942-12-30', '79 ', 'RT 07 RW 04', 'Pegawai Negeri Sipil', 'minta rujukan', '-', '128/80', '80', '36', '18', '158', '60', '80', 'I63.9', 'Cerebral infarction, unspecified', 'Pelayanan Rawat Jalan'),
-(3009, 'DWI LESTARI', '`012180', '`', '`', 'P', '2001-01-15', '21 ', '44717', 'Wiraswasta', 'gatal', '-', '0/0', '0', '0', '0', '0', '0', '0', 'L20', 'Atopic dermatitis', 'Pelayanan Rawat Jalan'),
-(3010, 'ISBATUL MUKAROMAH', '`001382', '`', '`', 'P', '2006-01-09', '16 ', 'RT 26 RW 07', 'Pelajar / Mahasiswa', 'suket', '-', '0/0', '0', '0', '0', '0', '0', '0', 'Z00.0', 'General medical examination', 'Pelayanan Rawat Jalan'),
-(3011, 'SUSALMAH', '`004448', '`0000664604897', '`', 'P', '1972-03-04', '49 ', '44632', 'Mengurus Rumah Tangga', 'pusing', '-', '170/100', '80', '36', '18', '160', '60', '80', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
-(3012, 'BEJO', '`011876', '`', '`', 'L', '1933-12-31', '88 ', 'DUSUN BLIMBING 12', 'Wiraswasta', 'aff kateter', '-', '120/80', '80', '36', '18', '160', '60', '80', 'K29', 'Gastritis and duodenitis', 'Pelayanan Rawat Jalan'),
-(3014, 'NAPSIYAH', '`012194', '`0000106683153', '`', 'P', '1945-08-15', '76 ', 'BARANG', '0', 'Pusing', '-', '180/111', '80', '36', '18', '160', '55', '80', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
-(3015, 'NYAMIYO', '`007264', '`0002526802806', '`3503012403830004', 'L', '1983-03-24', '38 ', 'DUSUN BELANGAN, RT : 8,RW :3', 'Petani/Pekebun', 'Pusing', '-', '120/80', '80', '36', '18', '155', '60', '70', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
-(3016, 'TUMINI', '`008063', '`0000663236987', '`', 'P', '1973-10-05', '48 ', 'DUSUN PAKURAN, RT : 7,RW :4', 'Mengurus Rumah Tangga', 'pusing', '-', '120/80', '80', '36', '18', '160', '60', '80', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
-(3017, 'ENI CUNARA ISTIKA PUTRI', '`012197', '`0000664493488', '`', 'P', '2000-02-17', '21 ', '44666', 'Mengurus Rumah Tangga', 'nyeri perut', '-', '120/80', '80', '36', '18', '160', '70', '80', 'K29', 'Gastritis and duodenitis', 'Pelayanan Rawat Jalan'),
-(3018, 'UMI ROHMAH', '`012199', '`0002014075719', '`', 'P', '1988-08-21', '33 ', '44822', 'Wiraswasta', 'nyeri perut', '-', '100/70', '80', '36', '18', '160', '69', '80', 'K29', 'Gastritis and duodenitis', 'Pelayanan Rawat Jalan');
+(3101, 'WIJI', '012172', '0001036815006', '', 'P', '1968-10-03', '53 ', '44696', 'Mengurus Rumah Tangga', 'tangan trasa panas', '', '120/80', '8', '36', '18', '16', '6', '8', 'R53', 'Malaise and fatigue', 'Pelayanan Rawat Jalan'),
+(3102, 'SAMSIYAH', '012174', '0000664611129', '', 'P', '1968-07-05', '53 ', '44788', 'Mengurus Rumah Tangga', 'cek gula darah', '', '177/104', '8', '36', '18', '16', '7', '8', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
+(3103, 'ALYA DWI NANDA', '012177', '0001369606601', '3603014901050001', 'P', '2005-01-09', '17 ', '44768', 'Pelajar / Mahasiswa', 'suket', '', '', '', '', '', '', '', '', 'Z00.0', 'General medical examination', 'Pelayanan Rawat Jalan'),
+(3104, 'MISKIYEM', '011321', '0003104574175', '', 'P', '1971-02-01', '51 ', '44765', 'Mengurus Rumah Tangga', 'cek tensi', '', '220/130', '8', '36', '18', '16', '8', '8', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
+(3105, 'DEVI YULIANINGSIH', '012171', '', '3503016312930003', 'P', '1993-12-23', '28 ', 'DUSUN KRAJAN, RT : 3,RW :2', 'Mengurus Rumah Tangga', 'cek hb', '', '126/70', '', '', '', '', '', '', 'K29', 'Gastritis and duodenitis', 'Pelayanan Rawat Jalan'),
+(3106, 'FINA ROIUL AULIA', '012173', '', '', 'P', '2008-05-24', '13 ', '33/13', 'Pelajar / Mahasiswa', 'batuk berdahak', '', '120/80', '', '', '', '', '', '', 'J06', 'Acute upper respiratory infections of multiple and unspecified sites', 'Pelayanan Rawat Jalan'),
+(3107, 'WULAN RAMADHANI', '002239', '', '', 'P', '2011-08-04', '10 ', '44563', 'Belum / Tidak Bekerja', 'batuk,pilek,panas', '', '110/70', '', '', '', '', '', '', 'J06', 'Acute upper respiratory infections of multiple and unspecified sites', 'Pelayanan Rawat Jalan'),
+(3108, 'SONEM', '009657', '', '3503014712540001', 'P', '1954-12-07', '67 ', 'DUSUN PASUR, RT : 12,RW :3', 'Mengurus Rumah Tangga', 'keju linu', '', '', '', '', '', '', '', '', 'M06.0', 'Seronegative rheumatoid arthritis', 'Pelayanan Rawat Jalan'),
+(3109, 'PARDAN RIANTO', '010632', '0000663023215', '', 'L', '1991-04-08', '30 ', '44564', 'Wiraswasta', 'kontrol odgj', '', '110/70', '8', '36', '18', '155', '6', '8', 'F20', 'Schizophrenia', 'Pelayanan Rawat Jalan'),
+(3110, 'MULYONO', '001226', '0000106633539', '', 'L', '1942-12-30', '79 ', 'RT 07 RW 04', 'Pegawai Negeri Sipil', 'minta rujukan', '', '128/80', '8', '36', '18', '158', '6', '8', 'I63.9', 'Cerebral infarction, unspecified', 'Pelayanan Rawat Jalan'),
+(3111, 'DWI LESTARI', '012180', '', '', 'P', '2001-01-15', '21 ', '44717', 'Wiraswasta', 'gatal', '', '', '', '', '', '', '', '', 'L20', 'Atopic dermatitis', 'Pelayanan Rawat Jalan'),
+(3112, 'ISBATUL MUKAROMAH', '001382', '', '', 'P', '2006-01-09', '16 ', 'RT 26 RW 07', 'Pelajar / Mahasiswa', 'suket', '', '', '', '', '', '', '', '', 'Z00.0', 'General medical examination', 'Pelayanan Rawat Jalan'),
+(3113, 'SUSALMAH', '004448', '0000664604897', '', 'P', '1972-03-04', '49 ', '44632', 'Mengurus Rumah Tangga', 'pusing', '', '170/100', '8', '36', '18', '16', '6', '8', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
+(3114, 'BEJO', '011876', '', '', 'L', '1933-12-31', '88 ', 'DUSUN BLIMBING 12', 'Wiraswasta', 'aff kateter', '', '120/80', '8', '36', '18', '16', '6', '8', 'K29', 'Gastritis and duodenitis', 'Pelayanan Rawat Jalan'),
+(3116, 'NAPSIYAH', '012194', '0000106683153', '', 'P', '1945-08-15', '76 ', 'BARANG', '0', 'Pusing', '', '180/111', '8', '36', '18', '16', '55', '8', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
+(3117, 'NYAMIYO', '007264', '0002526802806', '3503012403830004', 'L', '1983-03-24', '38 ', 'DUSUN BELANGAN, RT : 8,RW :3', 'Petani/Pekebun', 'Pusing', '', '120/80', '8', '36', '18', '155', '6', '7', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
+(3118, 'TUMINI', '008063', '0000663236987', '', 'P', '1973-10-05', '48 ', 'DUSUN PAKURAN, RT : 7,RW :4', 'Mengurus Rumah Tangga', 'pusing', '', '120/80', '8', '36', '18', '16', '6', '8', 'I10', 'Essential (primary) hypertension', 'Pelayanan Rawat Jalan'),
+(3119, 'ENI CUNARA ISTIKA PUTRI', '012197', '0000664493488', '', 'P', '2000-02-17', '21 ', '44666', 'Mengurus Rumah Tangga', 'nyeri perut', '', '120/80', '8', '36', '18', '16', '7', '8', 'K29', 'Gastritis and duodenitis', 'Pelayanan Rawat Jalan'),
+(3120, 'UMI ROHMAH', '012199', '0002014075719', '', 'P', '1988-08-21', '33 ', '44822', 'Wiraswasta', 'nyeri perut', '', '100/70', '8', '36', '18', '16', '69', '8', 'K29', 'Gastritis and duodenitis', 'Pelayanan Rawat Jalan');
 
 -- --------------------------------------------------------
 
@@ -264,13 +265,13 @@ ALTER TABLE `tb_dokter`
 -- AUTO_INCREMENT untuk tabel `tb_poli`
 --
 ALTER TABLE `tb_poli`
-  MODIFY `id_poli` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_poli` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_rekam_medis`
 --
 ALTER TABLE `tb_rekam_medis`
-  MODIFY `id_rm` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3019;
+  MODIFY `id_rm` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3121;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_roles`
