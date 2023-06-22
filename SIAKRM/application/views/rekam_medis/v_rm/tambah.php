@@ -27,13 +27,13 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="col-sm-6 col-form-label" for="no_bpjs">No. BPJS</label>
-                                <input type="number" name="no_bpjs" id="no_bpjs" class="form-control">
+                                <input type="number" name="no_bpjs" id="no_bpjs" class="form-control" required="on">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="col-sm-6 col-form-label" for="no_ktp">NIK</label required="on">
-                                <input type="number" name="no_ktp" id="no_ktp" class="form-control">
+                                <input type="number" name="no_ktp" id="no_ktp" class="form-control" required="on">
                             </div>
                         </div>
                     </div>
@@ -82,13 +82,13 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="col-sm-6 col-form-label" for="keluhan">Keluhan</label>
-                                <input type="text" name="keluhan" value="-" id="keluhan" class="form-control">
+                                <input type="text" name="keluhan" value="-" id="keluhan" class="form-control" required="on">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="col-sm-6 col-form-label" for="terapi">Terapi</label>
-                                <input type="text" name="terapi" value="-" id="terapi" class="form-control">
+                                <input type="text" name="terapi" value="-" id="terapi" class="form-control" required="on">
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                                 <div class="row mb-6">
                                     <label class="col-sm-4 col-form-label" for="tensi">Tensi</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="tensi" value="-" id="tensi" class="form-control">
+                                        <input type="text" name="tensi" value="-" id="tensi" class="form-control" required="on">
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                                 <div class="row mb-6">
                                     <label class="col-sm-4 col-form-label" for="nadi">Nadi</label>
                                     <div class="col-lg-8">
-                                        <input type="number" name="nadi" id="nadi" class="form-control">
+                                        <input type="number" name="nadi" id="nadi" class="form-control" required="on">
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +117,7 @@
                                 <div class="row mb-6">
                                     <label class="col-sm-4 col-form-label" for="suhu">Suhu</label>
                                     <div class="col-lg-8">
-                                        <input type="number" name="suhu" id="suhu" class="form-control">
+                                        <input type="number" name="suhu" id="suhu" class="form-control" required="on">
                                     </div>
                                 </div>
                             </div>
@@ -126,7 +126,7 @@
                                 <div class="row mb-6">
                                     <label class="col-sm-4 col-form-label" for="pernapasan">Pernapasan</label>
                                     <div class="col-lg-8">
-                                        <input type="number" name="pernapasan" id="pernapasan" class="form-control">
+                                        <input type="number" name="pernapasan" id="pernapasan" class="form-control" required="on">
                                     </div>
                                 </div>
                             </div>
@@ -137,7 +137,7 @@
                                 <div class="row mb-6">
                                     <label class="col-sm-4 col-form-label" for="tinggi">Tinggi</label>
                                     <div class="col-lg-8">
-                                        <input type="number" name="tinggi" id="tinggi" class="form-control">
+                                        <input type="number" name="tinggi" id="tinggi" class="form-control" required="on">
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@
                                 <div class="row mb-6">
                                     <label class="col-sm-4 col-form-label" for="berat">Berat</label>
                                     <div class="col-lg-8">
-                                        <input type="number" name="berat" id="berat" class="form-control">
+                                        <input type="number" name="berat" id="berat" class="form-control" required="on">
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +155,7 @@
                                 <div class="row mb-6">
                                     <label class="col-sm-4 col-form-label" for="lingkar_perut">Lingkar Perut</label>
                                     <div class="col-lg-8">
-                                        <input type="number" name="lingkar_perut" id="lingkar_perut" class="form-control">
+                                        <input type="number" name="lingkar_perut" id="lingkar_perut" class="form-control" required="on">
                                     </div>
                                 </div>
                             </div>
@@ -166,7 +166,7 @@
                         <div class="row ">
                             <label class="col-sm-2 col-form-label" for="id_diagnosa">No.Diagnosa</label>
                             <div class="col-lg-2">
-                                <input type="text" name="id_diagnosa" id="id_diagnosa" class="form-control">
+                                <input type="text" name="id_diagnosa" id="id_diagnosa" class="form-control" required="on">
                             </div>
                         </div>
                     </div>
@@ -175,13 +175,13 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="col-sm-6 col-form-label" for="diagnosa">Diagnosa</label>
-                                <input type="text" name="diagnosa" id="diagnosa" class="form-control">
+                                <input type="text" name="diagnosa" id="diagnosa" class="form-control" required="on">
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label class="col-sm-6 col-form-label" for="tindakan">Tindakan</label required="on">
-                                <input type="text" name="tindakan" id="tindakan" class="form-control">
+                                <input type="text" name="tindakan" id="tindakan" class="form-control" required="on">
                             </div>
                         </div>
                     </div>
